@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сума чисел</title>
+</head>
+<body>
+    <h2>Сума чисел з полів вводу</h2>
+    <input class="num" type="text" value="" placeholder="Число">
+    <input class="num" type="text" value="" placeholder="Число">
+    <input class="num" type="text" value="" placeholder="Число">
+    <button id="task">Enter</button>
+    <p id="result"></p>
+
+    <!-- JavaScript -->
+    <script>
+        document.getElementById("task").addEventListener("click", function() {
+            let inputs = document.querySelectorAll(".num"); // Отримуємо всі елементи з класом 'num'
+            let sum = 0;
+
+            inputs.forEach(function(input) {
+                let value = parseFloat(input.value); // Перетворюємо значення в число
+                if (!isNaN(value)) { 
+                    sum += value; // Додаємо до суми, якщо це число
+                }
+            });
+
+            document.getElementById("result").textContent = "Сума: " + sum; // Виводимо результат
+        });
+    </script>
+</body>
+</html>
